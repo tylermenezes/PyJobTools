@@ -32,7 +32,7 @@ class _rlog:
 
     @staticmethod
     def format_stack(stack):
-        return "[" + " <- ".join([":".join([x[0], x[3], str(x[1])]) for x in reversed(stack)]) + "]"
+        return "[" + " <- ".join([":".join([path.split(x[0])[1], str(x[3]), str(x[1])]) for x in reversed(stack)]) + "]"
 
     def debug(self, text):
         self.write("dbg", str(text))
